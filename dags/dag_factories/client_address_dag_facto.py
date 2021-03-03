@@ -15,3 +15,6 @@ class ClientAddressDagFacto(
 ):
     def _mongo_to_pg_operator_klass(self):
         return TransferClientAddressFromMongoToPgOperator
+
+    def _mongo_to_pg_operator_task_id(self):
+        return 'transfer_client_addresses_from_mongo_to_pg'
