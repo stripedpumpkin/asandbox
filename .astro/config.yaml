@@ -1,2 +1,6 @@
 project:
   name: sandbox-001
+webserver:
+  port: 8071
+postgres:
+  port: 5436
