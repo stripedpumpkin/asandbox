@@ -7,9 +7,6 @@ from datetime import timedelta
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 
-import plugins.alert_management as alert_management
-
-
 # dag_name='daily_order_price_pop_dev'
 # schedule_interval='@daily'
 # start_date=datetime(2019, 8, 20)
@@ -62,9 +59,6 @@ class MongoToPgToRedshiftDagFactory(ABC):
             **self._date_args(),
             'retries': 2,
             'retry_delay': timedelta(minutes=5),
-            'email': alert_management.alert_receiver_emails(),
-            'email_on_failure': True,
-            'email_on_retry': False,
             **self.additional_default_args
         }
 
